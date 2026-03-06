@@ -52,7 +52,7 @@ Rules can be read here https://en.wikipedia.org/wiki/Blackjack
 -----
 
 # Project start
-
+Began by compiling some resources, W3 Schools with a decent intro tutorial to get to grips with syntax and program flow, and looked around online for a decent CLI UI interface. One of my collaborators mentioned crossterm?
 
 
 
