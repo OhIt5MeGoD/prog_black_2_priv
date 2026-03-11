@@ -54,6 +54,22 @@ Rules can be read here https://en.wikipedia.org/wiki/Blackjack
 # Project start
 Began by compiling some resources, W3 Schools with a decent intro tutorial to get to grips with syntax and program flow, and looked around online for a decent CLI UI interface. One of my collaborators mentioned crossterm?
 
+[11/03/26]
+
+I started my Rust project using Cargo and Crates, but quickly found that Crates was deprecated and moved on to Dependi.
+
+Also had to manually install some MSVC build tools.
+
+Getting used to the stricter typing and how Rust formats module imports, as well as finding the modules that did what I needed, namely randomisation and inputs.
+
+Someone made a module that allows you to use input!() like python's input(), instead of going through the std interface which I promptly installed.
+
+Generating the initial deck was easy(ish), I was initially going to write out the whole deck by hand with suits. Then I realised in blackjack suits are irrelevant, then I realised I could write the array once for each denomination and "multiply" by 4 then randomise. However this left me then with a 2D array, since the enumeration doesn't concatenate.
+
+Then I thought about it again and realised this was a lot of unneccessary steps instead of just writing the deck out once (a 52 card deck never changes, so generating like so is just more operations). It did however teach me some nice stuff about array and vector handling in Rust, alongside mapping and enumeration - a worthwhile early exercise. (If you look at my commit history you'll see 2 that are like 15 minutes apart after I realise I can just do it in a simpler way).
+
+
+
 
 
     
