@@ -68,6 +68,8 @@ Generating the initial deck was easy(ish), I was initially going to write out th
 
 Then I thought about it again and realised this was a lot of unneccessary steps instead of just writing the deck out once (a 52 card deck never changes, so generating like so is just more operations). It did however teach me some nice stuff about array and vector handling in Rust, alongside mapping and enumeration - a worthwhile early exercise. (If you look at my commit history you'll see 2 that are like 15 minutes apart after I realise I can just do it in a simpler way).
 
+Also learned about the display {} and debug {:?} trait outputs. Might have to abuse them a little.
+
 
 
 
