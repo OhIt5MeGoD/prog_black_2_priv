@@ -8,6 +8,9 @@ fn main() {
 
     let mut deck = ["A","K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2","A","K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3","2","A","K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2","A","K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"];
 
+    let mut dealer_hand = Vec::new();
+    let mut player_hand = Vec::new();
+
     deck.shuffle(&mut rng);
 
     println!("{:?}", deck);
@@ -18,6 +21,9 @@ fn main() {
 
         if action == "H" {
             break
+        } else if action == "S" {
+            break
         }
+        
     }
 }
