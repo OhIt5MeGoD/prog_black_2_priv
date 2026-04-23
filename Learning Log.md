@@ -74,10 +74,15 @@ Also learned about the display {} and debug {:?} trait outputs. Might have to ab
 
 Working on the main logic loop, reaing up on the elseif syntax and modules (subroutines) within Rust. I don't need them yet, but I'll keep this info in the back pocket. 
 
-A thread from the rust forums outlined a way to take an element from a vector (the deck) and remove it afterwards. Once it gets added to player/dealer hands, you can then move on to the next iteration loop. The syntax for this was very interesting. Something more interesting was the discourse on how .remove (removes element at index and shifts all elements to the left by one address) compares to .swap_remove (swaps the element at the index to the last one in the list and pops the list). As .remove is O(n) and .swap_remove is O(1), but the tradeoff is that swap_remove will change any ordering that exists. I found it interesting because it's a (marginally) lower level optimisation that I wouldn't have thought of. 
+A thread from the rust forums outlined a way to take an element from a vector (the deck) and remove it afterwards. Once it gets added to player/dealer hands, you can then move on to the next iteration loop. The syntax for this was very interesting. Something more interesting was the discourse on how .remove (removes element at index and shifts all elements to the left by one address) compares to .swap_remove (swaps the element at the index to the last one in the list and pops the list). As .remove is O(n) and .swap_remove is O(1), but the tradeoff is that swap_remove will change any ordering that exists. I found it interesting because it's a (marginally) lower level optimisation that I wouldn't have thought of. [forum link](https://users.rust-lang.org/t/how-to-randomly-take-out-an-element-and-delete-it-from-vec/51986/2).
 
+[23/4/26]
 
+Now that I have the main ideas behind the principles of Rust, I figured out subroutines which are more C-like than I'm used to. It also does a cool thing of returning the last expression in a function without explicitly calling `return`.
 
+I planned out the program flow in a quick [flowchart](Blackjack_Flow.png)
+
+![Image of a flowchart describing the flow of a blackjack game](Blackjack_Flow.png)
 
 
     
