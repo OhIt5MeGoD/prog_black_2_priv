@@ -1,18 +1,15 @@
 // Module import
-use rand::prelude::*;
+use rand::seq::SliceRandom;
 use prompted::input;
 use std::{collections::{HashMap, hash_map}, vec};
 
 fn main() {
 
-    let mut rng = rand::rng();
-
-    let mut deck: [&str; 52] = ["A","K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2","A","K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3","2","A","K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2","A","K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"];
+    let mut deck: Vec<&str> = Vec::from(["A","K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2","A","K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3","2","A","K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2","A","K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"]);
 
     let mut dealer_hand: Vec<&str> = Vec::new();
     let mut player_hand: Vec<&str> = Vec::new();
 
-    deck.shuffle(&mut rng);
 
     println!("{:?}", deck);
 
@@ -67,6 +64,7 @@ fn calc_hand(hand: &[&str]) -> (u32, bool) {
 
     (value as u32, is_soft)
 }
+
 
 
 

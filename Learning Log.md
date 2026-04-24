@@ -91,4 +91,9 @@ Now I almost have every component I need, I can (in functions):
 
 However the one element I am missing is comparing the different hands. For this I somehow need to parse the values of the hands. I decided to use a hashmap. This allows me to quickly convert from type to type (str -> int) that I can then use in calculations.
 
+I wrote this function, and had to reference the hand vectors with `hand: &[&str]`, and in the iteration then use `*[card]` being the iterator, since the * dereferences by one step allowing it to just be a string.
+
+I also realised I had to account for soft hands (Hands with an Ace that can be low or high, since that can be 1 or 11 in blackjack). This meant I had to change the output of my function from (u32) to (u32, bool) to add a boolean value to show if it is soft or not. This means if an ace is set to high, the value is soft. This means I can then display the soft or hard value (since you have both scores simultaneously with an Ace).
+
+
     
