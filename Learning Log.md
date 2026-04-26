@@ -95,5 +95,12 @@ I wrote this function, and had to reference the hand vectors with `hand: &[&str]
 
 I also realised I had to account for soft hands (Hands with an Ace that can be low or high, since that can be 1 or 11 in blackjack). This meant I had to change the output of my function from (u32) to (u32, bool) to add a boolean value to show if it is soft or not. This means if an ace is set to high, the value is soft. This means I can then display the soft or hard value (since you have both scores simultaneously with an Ace).
 
+After that, I wanted to write the card draw function. I realised that my deck of cards was immutable, so I changed from an array to a vector.
 
-    
+So I now have the parser, drawing cards etc. etc.
+
+Now all I need to do is put it all together in one big program flow, facilitated easily by my flow diagram.
+
+TODO - fold the draw function into a concat. for the dealer hands [X]
+Parse hands and write logic
+Rewrite random selection logic, shuffling isn't working properly. Use shuffl crate?
