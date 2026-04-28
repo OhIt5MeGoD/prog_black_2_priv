@@ -100,6 +100,8 @@ After that, I wanted to write the card draw function. I realised that my deck of
 So I now have the parser, drawing cards etc. etc.
 
 Now all I need to do is put it all together in one big program flow, facilitated easily by my flow diagram.
+I had to replace the rand module with a different set of functions since they seemed to be deprecated.
+
 
 TODO - fold the draw function into a concat. for the dealer hands [X]
 Parse hands and write logic
