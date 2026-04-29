@@ -101,8 +101,18 @@ So I now have the parser, drawing cards etc. etc.
 
 Now all I need to do is put it all together in one big program flow, facilitated easily by my flow diagram.
 I had to replace the rand module with a different set of functions since they seemed to be deprecated.
-
+Because of how I set up my functions and mutability, I had to familiarise myself with lifetimes and delve into the ideas rust has for references and sole ownership of memory and variables.
 
 TODO - fold the draw function into a concat. for the dealer hands [X]
 Parse hands and write logic
 Rewrite random selection logic, shuffling isn't working properly. Use shuffl crate?
+
+
+
+[28/4/26]
+
+I met again with my colleagues to then bring our project together. We consolidated our dependencies and created a central script that allows you to select which game you want to play. This let us turn each of our programs into modules, add them to a library and call them as functions within the final program. 
+
+With that, the set of games that we worked on has come together and the programming is finished!
+
+Summary:

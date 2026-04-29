@@ -15,14 +15,30 @@ fn main() {
     let mut dealer_hand: Vec<&str> = vec![deck.pop().expect("empty"), deck.pop().expect("empty")];
     let mut player_hand: Vec<&str> = vec![deck.pop().expect("empty"), deck.pop().expect("empty")];
 
-    player_hand.push(deck.pop().expect("empty"));
-
     println!("{:?}", deck);
     println!("{:?}", player_hand);
     println!("{:?}", dealer_hand);
 
-    loop {
-        println!("The dealer is showing...");
+    // Setup
+
+        match calc_hand(&player_hand).1 { 
+            false => println!("Player hand: {:?} -> {}", player_hand, calc_hand(&player_hand).0),
+            true => println!("Player hand: {:?} -> {} or {}",player_hand, calc_hand(&player_hand).0, calc_hand(&player_hand).0 - 10)
+        };
+
+        println!("Dealer hand: [{}, ?]", dealer_hand[0]); // hide dealer's second card
+
+        if calc_hand(&dealer_hand).0 == 21 { // check for BJ
+            println!("Dealer has {:?}, Blackjack!", dealer_hand);
+            if calc_hand(&player_hand).0 == 21 {
+                println!("You also have blackjack with {:?}! Insane!", player_hand); // tiny tiny change of this happening
+            }          
+            println!("Restarting...");
+            main();  
+
+        }
+
+        loop { //player loop
         let action = input!("Would you like to hit (H) or stand (S)?");
         // Implement actions for cards
 
@@ -34,14 +50,58 @@ fn main() {
                 println!("Bust! Restarting game loop!");
                 main();
             } 
-            break;
+
+            match score.1 { 
+            false => println!("Player hand: {:?} -> {}", player_hand, calc_hand(&player_hand).0),
+            true => println!("Player hand: {:?} -> {} or {}",player_hand, calc_hand(&player_hand).0, calc_hand(&player_hand).0 - 10)
+            };
 
         } else if action == "S" {
-            break
+            break;
+        }
+        else {
+            print!("Invalid input, please enter H or S");
+            break;
         }
         
+        } // Close player loop
+        
+        loop {
+        let (value, soft) = calc_hand(&dealer_hand);
+
+        println!("Dealer hand: {:?} -> {}", dealer_hand, value);
+
+        if value > 21 {
+            println!("Dealer busts! Player wins.");
+            return;
+        }
+
+        let should_hit = value < 17 || (value == 17 && soft);
+
+        if should_hit {
+            dealer_hand.push(deck.pop().expect("empty"));
+        } else {
+            break;
+        } 
+    } //end dealer loop
+        
+    let (player_value, _) = calc_hand(&player_hand);
+    let (dealer_value, _) = calc_hand(&dealer_hand);
+
+    println!("\n--- Result ---");
+    println!("Player: {}", player_value);
+    println!("Dealer: {}", dealer_value);
+
+    match player_value.cmp(&dealer_value) {
+        std::cmp::Ordering::Greater => println!("Player wins!"),
+        std::cmp::Ordering::Less    => println!("Dealer wins!"),
+        std::cmp::Ordering::Equal   => println!("Push!"),
+    }// select winner
+
+    println!("Restarting...");
+    main();
     }
-}
+
 
 fn calc_hand(hand: &[&str]) -> (u32, bool) {
     let mut value: i32 = 0;
