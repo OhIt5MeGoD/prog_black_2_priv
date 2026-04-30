@@ -80,9 +80,9 @@ A thread from the rust forums outlined a way to take an element from a vector (t
 
 Now that I have the main ideas behind the principles of Rust, I figured out subroutines which are more C-like than I'm used to. It also does a cool thing of returning the last expression in a function without explicitly calling `return`.
 
-I planned out the program flow in a quick [flowchart](Blackjack_Flow.png) so I could see some of the functions I might need. 
+I planned out the program flow in a quick [flowchart](assets/Blackjack_Flow.png) so I could see some of the functions I might need. 
 
-![Image of a flowchart describing the flow of a blackjack game](Blackjack_Flow.png)
+![Image of a flowchart describing the flow of a blackjack game](assets/Blackjack_Flow.png)
 
 Now I almost have every component I need, I can (in functions):
 - create a shuffled deck
