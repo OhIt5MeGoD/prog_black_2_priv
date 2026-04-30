@@ -102,12 +102,11 @@ So I now have the parser, drawing cards etc. etc.
 Now all I need to do is put it all together in one big program flow, facilitated easily by my flow diagram.
 I had to replace the rand module with a different set of functions since they seemed to be deprecated.
 Because of how I set up my functions and mutability, I had to familiarise myself with lifetimes and delve into the ideas rust has for references and sole ownership of memory and variables.
+After lots of wrangling with lifetimes, the single reference requirement and other various intricacies of Rust, I remodelled my functions to be idiomatic and fit my use cases.
 
-TODO - fold the draw function into a concat. for the dealer hands [X]
-Parse hands and write logic
-Rewrite random selection logic, shuffling isn't working properly. Use shuffl crate?
+It's interesting to see the kind of "technical debt" you get into when you haven't started with best practices (since you don't *know*) best practices, such as using the wrong data type or manipulating the information the wrong way.
 
-
+With all of that, my main program loop was complete.
 
 [28/4/26]
 
