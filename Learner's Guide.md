@@ -5,7 +5,7 @@
 ## Motivation: Why learn it?
 
 Rust is a fairly new language, being created in 2015. This is in comparison to languages like C++, which has been around in some form since 1985.
-From Wikipedia<sup>[[1]](https://en.wikipedia.org/wiki/Rust_(programming_language)</sup>, "It is noted for its emphasis on performance, type safety, concurrency, and memory safety."
+From Wikipedia<sup>[[1]](https://en.wikipedia.org/wiki/Rust_(programming_language)/ "[1]")</sup>, "It is noted for its emphasis on performance, type safety, concurrency, and memory safety."
 
 These features make it suitable for a very wide variety of cases, but in general when you want your program to be fast but safe, Rust is a great language to reach for.
 
