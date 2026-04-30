@@ -99,6 +99,8 @@ After that, I wanted to write the card draw function. I realised that my deck of
 
 So I now have the parser, drawing cards etc. etc.
 
+[26/4/26]
+
 Now all I need to do is put it all together in one big program flow, facilitated easily by my flow diagram.
 I had to replace the rand module with a different set of functions since they seemed to be deprecated.
 Because of how I set up my functions and mutability, I had to familiarise myself with lifetimes and delve into the ideas rust has for references and sole ownership of memory and variables.
@@ -108,6 +110,12 @@ It's interesting to see the kind of "technical debt" you get into when you haven
 
 With all of that, my main program loop was complete.
 
+I then decided to build an ASCII card renderer, which would progressively replace the cards with the new drawn cards. It was relatively simple, just iterating a map over the vector much like you might do in Python.
+
+By adding a command character to clear the terminal in a certain way, I can have any updates to the game state change the cards displayed.
+
+This completes the game from my end.
+
 [28/4/26]
 
 I met again with my colleagues to then bring our project together. We consolidated our dependencies and created a central script that allows you to select which game you want to play. This let us turn each of our programs into modules, add them to a library and call them as functions within the final program. 
@@ -115,3 +123,16 @@ I met again with my colleagues to then bring our project together. We consolidat
 With that, the set of games that we worked on has come together and the programming is finished!
 
 Summary:
+
+Rust was a very fun language to learn that was very different from me. I made a lot of mistakes and this gave me a fantastic amount of learning points to work through, as well as this being my first foray into something slightly lower level.
+
+Interesting/new Concepts:
+
+- Referencing
+- Mutability
+- Lifetimes 
+- Operation optimisation
+- Ownership
+- Pointer safety
+
+

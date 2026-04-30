@@ -168,7 +168,6 @@ fn calc_hand(hand: &[&str]) -> (u32, bool) {
         value -= 10;
         aces -= 1;
     }
-
  
     let is_soft = aces > 0;
 
